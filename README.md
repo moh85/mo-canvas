@@ -16,3 +16,5 @@ This plugin is based on other libraries:
 Usage:
 
 moCanvas({'element': document.getElementById('myDiv'),'filename': 'my-pic-1'});
+
+The image is saved as PNG.
