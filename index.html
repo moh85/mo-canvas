@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>moCanvas Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <!-- for grag and drop only -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- for grag and drop only -->
+
+</head>
+<body style="background: #b7ec99;">
+
+<div class="jumbotron text-center">
+  <h1>moCanvas.js by <a href="https://fb.com/mo7ammadatwi">Mohammad Atwi</a></h1>
+  <p>HTML to Image JavaScript Function (Based on other libraries)</p> 
+  <h5><a href="https://github.com/moh85/mo-canvas">Code on Github</a></h5>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>Drag elements on the image to change its position, click save to get image.</h3>
+      <code style="background: #eee;">moCanvas({'element': document.getElementById('myDiv'),'filename': 'my-pic-1'});</code>
+      <br>
+      <br>
+      <div id="myDiv" style="width:600px;position:relative">
+      <h4 class="drag" contenteditable="" spellcheck="false" style="position: absolute;min-height: 27px;min-width:50px">Drag this text or edit it</h4>
+      <img class="drag" src="https://i.imgur.com/NTW3IPk.png" style="position: absolute;width: 75px;">
+      <img class="drag" src="https://i.imgur.com/3ZLA8u7.png" style="position: absolute;width: 75px;">
+      <img width="100%" src="https://i.imgur.com/DayDP3L.png">
+      </div>
+
+      <br>
+      
+      <button class="btn btn-primary" id="save">Save Image</button>
+
+      <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+</div>
+</div>
+</div>
+
+<script src="mocanvas.js?t=ss"></script>
+<script>
+/* to drag elements */
+$(function() {
+$(".drag").draggable();
+});
+
+/* on click save image */
+document.getElementById('save').addEventListener("click", function(){
+moCanvas({
+'element': document.getElementById('myDiv'),
+'filename': 'my-pic-' + Math.random()
+});
+}); 
+</script>
+
+</body>
+</html>
